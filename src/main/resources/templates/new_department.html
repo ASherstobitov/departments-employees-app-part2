@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Departments Employees Application</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+<h1>Departments Employees Application</h1>
+<hr>
+<h2> Save Department </h2>
+
+<form action="#" th:action="@{/api/department/saveDepartment}" th:object="${department}",
+      method="post">
+
+    <input type="text" th:field = "*{departName}"
+           placeholder="Department Name" class="form-control mb-4 col-4">
+    <button type="submit" class="btn btn-info col-20">Save Department</button>
+</form>
+    <hr>
+    <a th:href="@{/api/department}"> Back to Department list</a>
+</div>
+
+</body>
+</html>
